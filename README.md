@@ -1,13 +1,13 @@
 # OpenLibrary Book Search
 
-A simple script for searching books on [Open Library](https://openlibrary.org/) and saving their information to a CSV file.
+A simple Python application for searching books on [Open Library](https://openlibrary.org/) and exporting the results to a CSV file.
 
 ## Installation
 
-Install the project dependency:
+Install the project dependencies with:
 
 ```bash
-pip install requests
+pip install -r requirements.txt
 ```
 
 Or, if you use `uv`:
@@ -18,18 +18,32 @@ uv sync
 
 ## Usage
 
+Run the application with:
+
 ```bash
 python main.py
 ```
 
-Enter a book title or search phrase when prompted. The application retrieves up to 50 results from Open Library and keeps only books whose first publication year is after 2000.
+Enter a book search phrase when prompted. The application retrieves up to 50 results from Open Library and keeps only books whose first publication year is after 2000.
 
 ## Output
 
-A CSV file named after the search phrase is created in the current working directory. It includes information such as:
+The results are saved as a CSV file named after the search phrase in the current working directory.
+
+The CSV file includes:
 
 - Book title
 - Authors
 - First publication year
 - Edition count
 - Language
+
+An example output file is available at [mobi-dick.csv](mobi-dick.csv).
+
+## Project Structure
+
+- `main.py` — Application entry point and configuration
+- `utils.py` — API, filtering, and CSV export helper functions
+- `mobi-dick.csv` — Sample output file
+
+Python 3.13 or later and an internet connection are required.
